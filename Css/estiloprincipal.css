@@ -1,0 +1,375 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    /* esto es para hacer el efecto de degradado*/
+    background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+  }
+  
+  /* esto es para que la pagina se adapte a cualquier resolucion */
+  .todo{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+  }
+  
+  ul{
+  list-style: none;
+  }
+  
+  img{
+    max-height: 300%;
+    max-width: 100%;
+  }
+  
+  /* aqui comienza la barra de nevagacion */
+  nav{
+    height: 70px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+    box-shadow: 0px 1px 3px #aa3f5f;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+  
+  nav .nav-left, nav .nav-right{
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .nav-left > img{
+    width: 40px;
+  }
+  
+  .input{
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    margin-left: 10px;
+  }
+  
+  nav .nav-middle{
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+  }
+  
+  nav .nav-middle a{
+    text-decoration: none;
+    color:#333;
+    padding:10px;
+    margin:0px 10px;
+  }
+  
+  nav .nav-middle i a.active, i:hover {
+    color:#aa3f5f;
+    position:relative;
+    transition: 1s;
+  }
+  
+  nav .nav-middle a > i{
+    font-size: 25px;
+  }
+  
+  nav .nav-right .profile, .container .left-panel .profile{
+    background: url('/images/dp.jpg');
+    height:40px;
+    width:40px;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  nav .nav-right a{
+    text-decoration: none;
+    color:#333;
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    background:#eee;
+    display:grid;
+    place-items: center;
+    margin-left:1rem;
+  }
+  
+  nav .nav-right a > i{
+    font-size:18px;
+  }
+  /* aqui acaba la barra de navegacion */
+
+  /* aqui inicia todo lo del corrucel */
+ 
+  h4, h2,small,a{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.Carousel{
+    width: 100%;
+    margin: 0px 60px;
+}
+
+/*Titulo del Carrucel*/
+.title{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
+
+/* tipografia tipo pixel art */
+@font-face {
+  font-family:pixel;
+  src: url(ka1.ttf);
+}
+  
+
+.title h2 {
+  display: inline-block;
+    font-size: 5vmin;
+    position: absolute;
+    font-family: pixel;
+  }
+
+  .title h2::after,h2::before{
+  content:'';
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: #aa3f5f;
+  top: 0.6em;
+}
+
+.title h2::before{
+  left: -140px;
+}
+
+.title h2::after{
+  right: -140px;
+}
+  
+  .border {
+    color: rgb(255, 255, 255);  
+    text-shadow:
+      -1px -1px 0 #fc94b3, 
+      1px -1px 0 #ffa7c1,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffacc5;  
+  }
+
+/* imagenes del carrucel */
+
+.slick-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 90vw;
+    overflow: hidden;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.slick{
+    position: relative;
+    width: 275px;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+.slick h4{
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #fff;
+    padding: 15px;
+}
+.slick h4 small{
+    font-size: 15px;
+    display: block;
+}
+.slick a img{
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    transition: .3s ease-in-out;
+}
+.slick a img:hover{
+    opacity: ;
+    box-shadow: 0 2px 5px 0 #aa3f5f;
+}
+
+/* Botones */
+
+.slick-arrow{
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border: 0;
+    cursor: pointer;
+}
+.slick-arrow:focus{
+    outline: 0;
+}
+.slick-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.slick-prev{
+    left: 0px;
+}
+.slick-next{
+    right: 0px;
+}
+
+/* aqui acaba todo lo del carrucel */
+
+/* inicio del las noticias */
+
+.contenedor {
+  display: flex;
+}
+
+.noticia {
+  align-items: center;
+    width: 90%;
+    margin: auto;
+    height: 20%;
+}
+
+section article {
+    transition: box-shadow 0.3s ease;
+    background-color: #00000041;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    cursor: help;
+}
+
+section article:hover {
+    box-shadow: 0 0.1rem 0.4rem #f17198;
+}
+
+section article h2, section article p {
+	color: #ffffff;
+    margin: 1rem;
+	text-align: center;
+}
+
+article p a{
+	color: #f17198;
+	transform: scale(1.1);
+	transition: 1s;
+    cursor: pointer;
+}
+
+.img1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.img2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+/* fin de la noticias */
+
+
+/* inicio del resumen */
+.resumen {
+    width: 50%;
+    margin-right: auto;
+    margin-left: 100px;
+    height: 40%;
+}
+
+.resumen section article {
+    transition: box-shadow 0.3s ease;
+    background-color: #00000041;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    cursor: help;
+}
+
+.resumen section article:hover {
+    box-shadow: 0 0.1rem 0.4rem #f17198;
+}
+
+.resumen section article h2, section article p {
+	color: #ffffff;
+    margin: 1rem;
+	text-align: center;
+}
+
+.resumen article p a{
+	color: #f17198;
+	transform: scale(1.1);
+	transition: 1s;
+    cursor: help;
+}
+
+.resumen .img1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.resumen .img2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+/* fin del resumen */
+
+hr {
+    color:#aa3f5f;
+    position: absolute;
+}
+

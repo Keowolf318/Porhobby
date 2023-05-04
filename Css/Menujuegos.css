@@ -1,0 +1,366 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  /*esto es para hacer el efecto de degradado*/
+  background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+}
+
+/*esto es para que la pagina se adapte a cualquier resolucion*/
+.todo{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+}
+
+ul{
+list-style: none;
+}
+
+img{
+  max-height: 300%;
+  max-width: 100%;
+}
+
+/*aqui comienza la barra de nevagacion*/
+nav{
+  height: 70px;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+  box-shadow: 0px 1px 3px #aa3f5f;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+nav .nav-left, nav .nav-right{
+  display: flex;
+  align-items: center;
+}
+
+nav .nav-left > img{
+  width: 40px;
+}
+
+nav .nav-left > input{
+  height: 40px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+
+nav .nav-middle{
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+}
+
+nav .nav-middle a{
+  text-decoration: none;
+  color:#333;
+  padding:10px;
+  margin:0px 10px;
+}
+
+nav .nav-middle i a.active, i:hover {
+  color:#aa3f5f;
+  position:relative;
+  transition: 1s;
+}
+
+nav .nav-middle a > i{
+  font-size: 25px;
+}
+
+nav .nav-right .profile, .container .left-panel .profile{
+  background: url('/images/dp.jpg');
+  height:40px;
+  width:40px;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav .nav-right a{
+  text-decoration: none;
+  color:#333;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  background:#eee;
+  display:grid;
+  place-items: center;
+  margin-left:1rem;
+}
+
+nav .nav-right a > i{
+  font-size:18px;
+}
+/*aqui acaba la barra de navegacion*/
+
+
+/*aqui comienza el diseño de las tarjetas*/
+
+/*posicion de las tarjetas*/
+.tarjeta {
+  position: relative;
+  width: 25%;
+  height: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  
+}
+
+/*cara frontal de la tarjeta*/
+.tarjeta .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.tarjeta .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #aa3f5f;
+}
+
+.tarjeta .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tarjeta .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0,0,0,.4);
+  text-align: center;
+}
+
+/*cara Trasera de la tarjeta*/
+.tarjeta .back {
+  transform: perspective(600px) rotateY(180deg);
+  background-image: linear-gradient(to top, #000000 0%, #1a1a1a 100%);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #aa3f5f;
+}
+
+.tarjeta .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+.tarjeta .back .link a {
+  color: #f3f3f3;
+}
+
+.tarjeta .back h3 {
+  font-size: medium;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.tarjeta .back p {
+  letter-spacing: 1px;
+} 
+
+/*animacion de la tarjeta*/
+.tarjeta:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.tarjeta:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+/*color de los links de la parte trasera*/
+.back p a{
+  color: #6dd69c;
+}
+
+/*diseño del boton "jugar"*/
+button {
+  position: relative;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: #aa3f5f;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+/*animacion del boton "jugar"*/
+button:hover {
+  color: white;
+}
+
+button span {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+
+button span:nth-child(1) {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: -100%;
+}
+
+button span:nth-child(2) {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  right: -100%;
+}
+
+button span:nth-child(3) {
+  width: 1px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+
+button span:nth-child(4) {
+  width: 1px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+
+button:hover span:nth-child(1) {
+  left: 0;
+}
+
+button:hover span:nth-child(2) {
+  right: 0;
+}
+
+button:hover span:nth-child(3) {
+  bottom: 0;
+}
+
+button:hover span:nth-child(4) {
+  top: 0;
+}
+/*aqui acaba el diseño de las  Tarjetas*/
+
+/*aqui inicia el diseño del separador */
+
+.title{
+	width: 100%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
+
+/*tipografia tipo pixel art*/
+@font-face {
+  font-family:pixel;
+  src: url(ka1.ttf);
+}
+  
+
+h2 {
+  display: inline-block;
+    font-size: 5vmin;
+    position: absolute;
+    font-family: pixel;
+  }
+
+h2::after,h2::before{
+  content:'';
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: #aa3f5f;
+  top: 0.6em;
+}
+
+h2::before{
+  left: -140px;
+}
+
+h2::after{
+  right: -140px;
+}
+  
+  .border {
+    color: rgb(255, 255, 255);  
+    text-shadow:
+      -1px -1px 0 #fc94b3, 
+      1px -1px 0 #ffa7c1,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffacc5;  
+  }
+  /*color de las olas
+  .wave {
+    color: #aa3f5f;
+    animation: wave 3s ease-in-out infinite;
+  }*/
+  
+  /*animacion de olas en las letras
+  @keyframes wave {
+    0%, 100% {
+      clip-path: polygon(
+        0% 47%,
+        10% 48%,
+        33% 54%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+      );
+    }
+  }*/
+/*aqui termina diseño del banner*/
+
+
