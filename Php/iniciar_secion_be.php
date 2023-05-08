@@ -14,7 +14,8 @@
 
                 $contrasena_usu= mysqli_query($conex,"SELECT * FROM datos WHERE contraseña='$contrasena_usu'");
                 if(mysqli_num_rows($contrasena_usu) > 0){
-                    echo'<a href="principal.html">bienvenido de vuelta</a>';
+                    $_SESSION['usuario']= $nombre_usu;
+                    header("location: principal.php");
                 }else{
                     echo'contraseña incorecta';
                 }
